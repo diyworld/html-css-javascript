@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title>
+</head>
+
+<body>
+
+<h3>HTML表单用于收集不同类型的用户输入<br>表单标签: form</h3>
+
+<form>
+<!-- 文本域 -->
+First name: <input type="text" name="firstname"><br>
+Last name: <input type="text" name="lastname"><br>
+<!-- 密码字段 -->
+Password: <input type="password" name="pwd"><br>
+<!-- 单选按钮 -->
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female<br>
+<!-- 复选框 -->
+<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+<input type="checkbox" name="vehicle" value="Car">I have a car<br>
+</form>
+
+<!-- 提交按钮 -->
+<!-- 提交数据传递到 html_form_action.php 页面 -->
+<form name="input" action="html_form_action.php" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+
+<!-- 复选框框 -->
+<form action="www.baidu.com" method="get">
+  <input type="checkbox" name="vehicle[]" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle[]" value="Car" checked="checked"> I have a car<br>
+  <input type="submit" value="提交">
+</form>
+
+<!-- 下拉框 -->
+<form action="">
+<select name="cars">
+<option value="v1">Volvo</option>
+<option value="v2">Saab</option>
+<option value="v3">Fiat</option>
+<option value="v4">Audi</option>
+</select>
+</form>
+
+</body>
+
+</html>

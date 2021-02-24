@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+function displayDate(){
+    //document.write("<p id=demo1>头部的js输出, id = 'demo1'</p>");
+    document.getElementById("demo").innerHTML=Date();
+    document.write("<p id=demo3>id = 'demo3'</p>"); //这个执行会把之前的所有信息清除掉??
+}
+</script>
+</head>
+<body>
+
+<script>
+    alert("JavaScript的用法")
+</script>
+
+<h1>JavaScript 程序</h1>
+<p id="demo">这是一个段落, id = 'demo'</p>
+<p id="demo3">这是一个段落, id = 'demo3'</p>
+
+<button type="button" onclick="displayDate()">显示日期</button>
+<script>
+document.write("<p id=demo2>body的js输出, id = 'demo2'</p>");
+</script>
+</body>
+</html>

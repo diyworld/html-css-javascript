@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<h3>函数的定义 function</h3>
+<p id="demo1"></p>
+
+<script>
+
+//基本函数
+function func1(){
+    //document.write("<p>func1</p>");
+    return 2;
+}
+func1();
+
+//函数表达式，赋值给变量，通过变量调用函数
+var func2 = function() {document.write("<p>func2</p>")};
+func2();
+
+//函数自调用，立即执行
+;(function (){
+    document.write("<p>func3</p>")
+})();
+
+//函数转换为字符串
+document.write("<p id='demo11'></p>");
+document.getElementById("demo11").innerHTML = func2.toString();
+
+
+</script>
+
+</body>
+</html>

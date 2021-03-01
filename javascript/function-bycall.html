@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<h3>函数的调用</h3>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+//函数的调用
+function myFunc(a,b) {
+    return a + b;
+}
+y1 = myFunc(10, 2); //直接调用
+y2 = window.myFunc(10, 2); //函数属于全局对象window
+document.write("<p>myFunc(10, 2) = " + y1 + "</p>");
+document.write("<p>window.myFunc(10, 2) = " + y2 + "</p>");
+
+//构造函数
+function myFunc3(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName = arg2;
+}
+var y3 = new myFunc3("John", "Doe");
+document.write("myFunc(10, 2) = " + y3.firstName + ' ' + y3.lastName + '</br>');
+
+//函数也是一个对象，下面是关于函数对象的apply函数的使用例子
+var myObj, myArr;
+myObj = {name: 'hahaha', hsk:'en'};
+myArr = [10, 2];
+function myFunc4(a, b) {
+    document.getElementById("demo1").innerHTML = 'a = ' + a;
+    document.getElementById("demo2").innerHTML = 'b = ' + b;
+    var c = a + b;
+    return this.name + ' ' + this.hsk + ' ' + c.toString();
+}
+y4 = myFunc4.apply(myObj, myArr);
+y5 = myFunc4.call(myObj, 10, 2);
+document.write("window.myFunc(10, 2) = " + y4 + '</br>');
+document.write("window.myFunc(10, 2) = " + y5 + '</br>');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<p>输入数字并点击验证按钮:</p>
+
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">验证</button>
+
+<p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+
+<p id="demo">demo</p>
+<p id="demo2">demo2</p>
+
+<script>
+function myFunction() {
+    var inpObj = document.getElementById("id1");
+    //必须设置为空，checkValidity() 才能有效
+    inpObj.setCustomValidity('')
+    //通过 checkValidity验证输入值是否合法
+    if (inpObj.checkValidity() == false) {
+        //不合法会自动打印错误信息
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    } else {
+        document.getElementById("demo").innerHTML = "输入正确";
+    }
+    
+    //通过 setCustomValidity() 设置 validationMessage信息
+    //设置该信息后，checkValidity() 输出永远是 false
+    //取消用 setCustomValidity('') 
+    inpObj.setCustomValidity('xxx') 
+    if (inpObj.checkValidity() == false) {
+        //不论是否合法，都将从这里输出信息
+        document.getElementById("demo2").innerHTML = inpObj.validationMessage;
+    } else {
+        document.getElementById("demo2").innerHTML = "输入正确";
+    }
+}
+</script>
+
+</body>
+</html>

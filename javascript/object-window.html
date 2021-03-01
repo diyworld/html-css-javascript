@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id='demo'>demo</p>
+<p id='demo2'>demo2</p>
+
+<script>
+//https://www.runoob.com/js/js-window.html
+//所有浏览器都支持 window 对象。它表示浏览器窗口
+document.getElementById('demo').innerHTML = "demo demo";
+window.document.getElementById('demo2').innerHTML = "demo demo2";
+//浏览器弹窗
+alert("弹窗内容xxxxxx");
+//浏览器前一个页面
+window.history.back(); //也可以用 history.go(1)
+window.history.froward(); //也可以用 history.go(-1)
+history.go(0); //刷新页面
+document.write( + "</br>");
+</script>
+
+</body>
+</html>

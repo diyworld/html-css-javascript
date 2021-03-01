@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<script>
+//https://www.runoob.com/js/js-obj-regexp.html
+s = "Hello world and JavaScript World!"
+//使用/xxx/yy匹配
+document.write(s.match(/World/i) + "</br>");  //i: 不区分大小写
+document.write(s.match(/World/g) + "</br>");  //g: 匹配多个
+document.write(s.match(/World/ig) + "</br>"); //ig: 匹配多个且不区分大小写
+//使用RegExp匹配
+document.write(s.match(RegExp('World', 'i')) + "</br>");  //i: 不区分大小写
+document.write(s.match(RegExp('World', 'g')) + "</br>");  //g: 匹配多个
+document.write(s.match(RegExp('World', 'ig')) + "</br>"); //ig: 匹配多个且不区分大小写
+//test方法
+document.write(RegExp('World', 'i').test(s) + "</br>"); //匹配返回 true
+document.write(RegExp('Worldd', 'i').test(s) + "</br>");//未匹配返回 false
+//exec方法
+document.write(RegExp('World', 'i').exec(s) + "</br>"); //匹配返回匹配值
+document.write(RegExp('Worldd', 'i').exec(s) + "</br>"); //匹配返回匹配null
+</script>
+
+</body>
+</html>

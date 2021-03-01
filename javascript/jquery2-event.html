@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+/* https://www.runoob.com/jquery/jquery-events.html
+ 鼠标事件: click, dblclick, mouseenter, mouseleave, hover
+ 键盘事件: keypress, keydown, keyup
+ 表单事件: submit, change, focus, blur
+ 文档/窗口事件: load, resize, scroll, unload
+ */
+$(document).ready(function(){
+  //点击事件
+  $("p.dispear").click(function(){
+    $(this).hide();
+  });
+  
+  //鼠标移入事件
+  $("#pop").mouseenter(function(){
+    $(this).css("background-color","#ff0000");
+  });
+  //鼠标移出事件
+  $("#pop").mouseleave(function(){
+    $(this).css("background-color","#00ff00");
+  });
+  //鼠标点击事件
+  $("#pop").click(function(){
+    alert("点击-弹框");
+  });
+});
+</script>
+</head>
+<body>
+
+<p class='dispear'>如果你点我，我就会消失。</p>
+<p class='dispear'>点我消失!</p>
+<p class='dispear'>点我也消失!</p>
+
+<p id='pop'>鼠标来!</p>
+
+</body>
+</html>

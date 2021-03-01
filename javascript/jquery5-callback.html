@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  //这里延时1000ms隐藏元素，但同时也顺序执行了下面的弹框行为
+  $("button#bt1").click(function(){
+    $("p#p1").hide(1000);
+    alert("弹框了，但段落还可以看到");
+  });
+  
+  //这里先执行hide完成时，才回到函数，这里的 'slow'可以替换为 'normal', 'fast', 1000(单位ms)
+  $("button#bt2").click(function(){
+    $("p#p2").hide("slow", function(){
+      alert("段落隐藏后我才能弹出");
+    });
+  });
+});
+</script>
+</head>
+<body>
+<button id='bt1'>隐藏1</button>
+<button id='bt2'>隐藏2</button>
+<p id='p1'>我们段落内容，点击“隐藏”按钮我就会消失1</p>
+<p id='p2'>我们段落内容，点击“隐藏”按钮我就会消失2</p>
+</body>
+</html>

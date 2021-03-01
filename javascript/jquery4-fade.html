@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button#bt1").click(function(){
+    $("#div1").fadeIn("fast");//快速淡出
+    $("#div2").fadeIn("slow");//缓慢淡出
+    $("#div3").fadeIn(1500);  //1500ms淡出
+  });
+	
+  $("button#bt2").click(function(){
+    $("#div1").fadeOut(1500);
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut("fast");
+  });
+  
+  $("button#bt3").click(function(){
+    $("#div1").fadeToggle("slow");
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle("slow");
+  });
+});
+</script>
+</head>
+
+<body>
+<p>以下实例演示了 fadeIn() 使用了不同参数的效果。</p>
+<button id='bt1'>点击淡入 div 元素。</button>
+<button id='bt2'>点击淡出 div 元素。</button>
+<button id='bt3'>点击淡入/淡出 div 元素。</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+</body>
+</html>

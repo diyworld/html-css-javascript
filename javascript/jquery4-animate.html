@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+  //点击，放大
+  $("button#bt1").click(function(){
+    $("div").animate({
+      height:'+=150px',
+      width:'+=150px'
+    });
+  });
+	
+  $("button#bt2").click(function(){
+    //点击，缩小
+    $("div").animate({
+      height:'-=150px',
+      width:'-=150px'
+    });
+  });
+	
+  $("button#bt3").click(function(){
+    $("div").animate({
+      left:'-50px'
+    });
+  });
+	
+  $("button#bt4").click(function(){
+    $("div").animate({
+      left:'+50px'
+    });
+  });
+});
+</script> 
+</head>
+ 
+<body>
+<button id='bt1'>放大</button>
+<button id='bt2'>缩小</button>
+<button id='bt3'>左移</button>
+<button id='bt4'>右移</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 
+如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div style="background:#98bf21;height:100px;width:100px;position:fixed;">
+</div>
+
+</body>
+</html>

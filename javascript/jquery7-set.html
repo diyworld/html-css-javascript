@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  //设置文本，使用函数回调的方法
+  $("#btn1").click(function(){
+    $("p#test1").text("Hello world!");
+  });
+  $("#btn2").click(function(){
+    $("h6#test2").html("<b>Hello world!</b>");
+  });
+  $("#btn3").click(function(){
+    $("p#test3").val("RUNOOB");
+  });
+  //设置属性
+  $("#btn4").click(function(){
+    $("h6#test1").attr("style","color:red");
+  });
+  //设置属性，使用attr回调函数
+  $("#btn5").click(function(){
+    $("h6#test3").attr("style", function(){
+        return "color:red";
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+<p id="test1">这是一个段落。</p>
+<p id="test2">这是另外一个段落。</p>
+<p>输入框: <input type="text" id="test3" value="菜鸟教程"></p>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置 HTML</button>
+<button id="btn3">设置值</button>
+<button id="btn4">设置属性</button>
+<button id="btn5">使用attr回调函数设置属性</button>
+
+<h6 id="test1">h6h6h6h6</h6>
+<h6 id="test2">h6h6h6h6</h6>
+<h6 id="test3">h6h6h6h6</h6>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button#bt1").click(function(){
+    //删除所有class='italic'的<p>标签
+    $("p").remove(".italic");
+    //或使用 $("p.italic").remove();
+  });
+  $("button#bt2").click(function(){
+    //清空所有<div>标签
+    $("div#div1").empty();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>这是一个段落。</p>
+<p class="italic"><i>这是另外一个段落。</i></p>
+<p class="italic"><i>这是另外一个段落。</i></p>
+<button id='bt1'>移除所有  class="italic" 的 p 元素。</button>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+这是 div 中的一些文本。
+<p>这是在 div 中的一个段落。</p>
+<p>这是在 div 中的另外一个段落。</p>
+</div>
+<button id='bt2'>清空div元素</button>
+
+</body>
+</html>

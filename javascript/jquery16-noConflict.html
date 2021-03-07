@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$.noConflict(); //执行<noConflict>此方法，符号<$>将不能使用
+jQuery(document).ready(function(){
+  //使用 jQuery符号，此方法可以避免和其他库的 $冲突
+  jQuery("button#bt1").click(function(){
+    jQuery("p#p1").text("jQuery 仍然在工作!");
+  });
+  //使用 noConflict符号，此方法可以避免和其他库的 $冲突
+  var jq = jQuery.noConflict();
+  jq("button#bt2").click(function(){
+    jq("p#p2").text("jQuery 仍然在工作!");
+  });
+  //使用 $ 符号，下面语句不会其效果
+  $("button#bt3").click(function(){
+    $("p#p3").text("jQuery 仍然在工作!");
+  });
+});
+</script>
+</head>
+
+<body>
+<p id='p1'>这是一个段落。</p>
+<p id='p2'>这是一个段落。</p>
+<p id='p3'>这是一个段落。</p>
+<button id='bt1'>点我</button>
+<button id='bt2'>点我</button>
+<button id='bt3'>点我</button>
+</body>
+</html>

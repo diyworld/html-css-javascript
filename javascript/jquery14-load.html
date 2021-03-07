@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+/** https://www.runoob.com/jquery/jquery-ajax-load.html
+ $(selector).load(URL,data,callback);
+ URL        必选字段，url地址
+ data       可选字段，提交的数据
+ callback   可选字段，载入成功后回调函数
+ */
+$(document).ready(function(){
+	$("button").click(function(){
+        //将 file的内容载入到 id='div1'标签里面
+        //注意这个 file是基于当前页面的路径的相对路径文件
+        var file = "/try/ajax/demo_test.txt";
+		$("#div1").load(file);
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
+<button>获取外部内容</button>
+
+</body>
+</html>

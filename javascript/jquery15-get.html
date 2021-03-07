@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+/** https://www.runoob.com/jquery/jquery-ajax-get-post.html
+ */
+$(document).ready(function(){
+	$("button").click(function(){
+        //注意这个 file是基于当前页面的路径的相对路径文件
+        var url = "/try/ajax/demo_test.php"
+		$.get(url, function(data,status){
+			document.write("数据: " + data + "\n状态: " + status);
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+<button>发送一个 HTTP GET 请求并获取返回结果</button>
+<p id="demo"></p>
+
+</body>
+</html>

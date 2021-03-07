@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+.ancestors *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+/**
+ 搜索方法
+ parent()       返回元素的父节点
+ parents()      返回元素的所有祖先节点
+ parentsUntil() 返回两者之间的所有祖先元素, 如 $("span").parentsUntil("div")
+ children()     返回元素的所有直接子元素
+ children(p.pp1)  返回元素的所有直接子元素里带有类名"pp1"的元素
+ find()         返回后代的指定元素, 其他例子: $("div").find("span"), 返回div所有子元素里的span元素
+ siblings()     返回元素的所有同胞
+ next()         返回下一个同胞
+ nextAll()      跟随的所有同胞
+ nextUntil()    返回给定两个元素直接的所有同胞元素, 如 $("h2").nextUntil("h6")
+ prev(), prevAll(), prevUntil()     作用同上, 方向相反
+ 
+ 过滤方法
+ first()        返回选取元素的第一个
+ last()         返回选取元素的最后一个
+ eq(n)          返回选取元素的第(n+1)个, n从0开始
+ filter(".cck") 返回选取元素中所有带类名"cck"的元素
+ */
+$(document).ready(function(){
+  //父元素
+  $("span").parent().css({"color":"red","border":"2px solid red"});
+});
+$(document).ready(function(){
+  //子元素
+  $("div").children("p").css({"color":"blue","border":"2px solid blue"});
+});
+$(document).ready(function(){
+  //同胞元素
+  $("#p21").next().css({"color":"red","border":"2px solid yellow"});
+});
+$(document).ready(function(){
+  //过滤
+  $(".ha").first().css({"color":"red","border":"2px solid red"});
+  $(".ha").last().css({"color":"red","border":"2px solid red"});
+  $(".ha").eq(1).css({"color":"red","border":"2px solid red"}); //第二个元素
+});
+</script>
+</head>
+<body>
+
+<div class="ancestors">
+  <div style="width:500px;">div (曾祖父元素)
+    <ul>ul (祖父元素)  
+      <li>li (父元素)
+        <span>span</span>
+      </li>
+    </ul>
+    <p>p-1</p>
+  </div>
+
+  <div id='div2' style="width:500px;">div (祖父元素)   
+    <p id='p21'>p (父元素)
+        <span>span</span>
+    </p>
+    <p id='xxxxd'>p21-next</p>
+    <p class='ha'>哈哈哈</p>
+    <p class='ha'>哈哈哈哈</p>
+    <p class='ha'>哈哈哈哈哈</p>
+  </div>
+</div>
+
+</body>
+</html>
